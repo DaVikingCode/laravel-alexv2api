@@ -1,6 +1,7 @@
 <?php
 
 return [
+
     'sp_entity_id_prod' => 'SP-' . env('APP_NNA') . '-prodn1',
     'sp_entity_id_dev' => 'SP-' . env('APP_NNA') . '-recn1',
     'api_url_prod' => 'https://alexv2-api-prodn1.enedis.fr/alex-api/av2/',
