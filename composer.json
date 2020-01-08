@@ -1,0 +1,45 @@
+{
+    "name": "davikingcode/laravel-alexv2api",
+    "description": ":description",
+    "license": "license",
+    "authors": [
+        {
+            "name": "author name",
+            "email": "mickael.jombart@davikingcode.com",
+            "homepage": "author homepage"
+        }
+    ],
+    "homepage": "https://github.com/davikingcode/alexv2api",
+    "keywords": ["DaVikingCode", "Laravel", "AlexV2Api"],
+    "require": {
+        "illuminate/support": "~5|~6",
+        "guzzlehttp/guzzle": "^6.3",
+        "spatie/laravel-permission": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3|~4",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DaVikingCode\\LaravelAlexV2Api\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DaVikingCode\\LaravelAlexV2Api\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DaVikingCode\\LaravelAlexV2Api\\LaravelAlexV2ApiServiceProvider"
+            ],
+            "aliases": {
+                "LaravelAlexV2Api": "DaVikingCode\\LaravelAlexV2Api\\Facades\\LaravelAlexV2Api"
+            }
+        }
+    }
+}
