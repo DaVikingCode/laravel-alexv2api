@@ -2,6 +2,7 @@
 
 namespace DaVikingCode\LaravelAlexV2Api;
 
+use DaVikingCode\LaravelAlexV2Api\Controllers\LaravelAlexV2ApiController;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelAlexV2ApiServiceProvider extends ServiceProvider
@@ -35,7 +36,7 @@ class LaravelAlexV2ApiServiceProvider extends ServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('laravelalexv2api', function ($app) {
-            return new LaravelAlexV2Api;
+            return new LaravelAlexV2ApiController();
         });
     }
 
