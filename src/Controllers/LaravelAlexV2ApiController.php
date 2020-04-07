@@ -166,6 +166,8 @@ class LaravelAlexV2ApiController extends Controller
     {
         $connector = new LaravelAlexV2ApiConnector();
 
+        dd($connector);
+
         $endpoint = $connector->api_url . "ws_id_read";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
