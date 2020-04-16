@@ -67,7 +67,6 @@ class LaravelAlexV2ApiController extends Controller
     // 7.1	Déclaration / Association d’un nouvel utilisateur (service : ws_user_association)
     public static function ws_user_association(string $email, string $nom, string $prenom, array $infos_perso = [], array $profiles = [])
     {
-
         $connector = new LaravelAlexV2ApiConnector();
 
         // format profiles
