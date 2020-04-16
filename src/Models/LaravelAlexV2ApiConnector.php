@@ -58,7 +58,6 @@ class LaravelAlexV2ApiConnector
             ]
         );
 
-        dd($response);
         return json_decode($response->getBody()->getContents())->jeton;
 
 //        // Autre méthode : Curl (fonctionne).
