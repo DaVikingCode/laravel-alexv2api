@@ -67,6 +67,8 @@ class LaravelAlexV2ApiController extends Controller
     // 7.1	Déclaration / Association d’un nouvel utilisateur (service : ws_user_association)
     public static function ws_user_association(string $email, string $nom, string $prenom, array $infos_perso = [], array $profiles = [])
     {
+        dd('la');
+
         $connector = new LaravelAlexV2ApiConnector();
 
         // format profiles
@@ -102,7 +104,6 @@ class LaravelAlexV2ApiController extends Controller
     // 7.2	Déclaration du départ d’un utilisateur / dissociation (service : ws_user_dissociation)
     public static function ws_user_dissociation($cn)
     {
-        dd('la');
         $connector = new LaravelAlexV2ApiConnector();
 
         $endpoint = $connector->api_url . "ws_user_dissociation";
