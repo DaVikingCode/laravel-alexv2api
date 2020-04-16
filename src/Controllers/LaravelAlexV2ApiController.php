@@ -102,6 +102,7 @@ class LaravelAlexV2ApiController extends Controller
     // 7.2	Déclaration du départ d’un utilisateur / dissociation (service : ws_user_dissociation)
     public static function ws_user_dissociation($cn)
     {
+        dd('la');
         $connector = new LaravelAlexV2ApiConnector();
 
         $endpoint = $connector->api_url . "ws_user_dissociation";
