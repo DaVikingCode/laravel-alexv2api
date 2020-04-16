@@ -33,13 +33,9 @@ class LaravelAlexV2ApiConnector
         $this->ssl_key = storage_path(config('laravelalexv2api.cert_path') . '/' . config('laravelalexv2api.server_key_file'));
         $this->api_password = config('laravelalexv2api.alex_v2_api_password');
 
-
-        dd($this);
-
         $this->jeton = $this->ws_auth_cta();
 
         $this->client = new Client();
-
 
 //        $this->checkForProfiles(); // execute once
     }
@@ -51,6 +47,9 @@ class LaravelAlexV2ApiConnector
         $endpoint = $this->api_url . "ws_auth_cta";
         $headers = ['Content-Type' => 'application/json'];
         $content = ['av2_S_ct_identifiant' => $this->sp_entity_id, 'av2_S_ct_mdp' => $this->api_password];
+
+        dd($client, $endpoint, $headers, $content);
+
         $response = $client->post(
             $endpoint, [
                 'json' => $content,
