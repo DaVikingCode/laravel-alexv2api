@@ -76,6 +76,7 @@ class LaravelAlexV2ApiConnector
             echo 'Error:' . curl_error($ch);
         }
         curl_close($ch);
+        dd($result);
         return json_decode($result)->jeton;
     }
 
