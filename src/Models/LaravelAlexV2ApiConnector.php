@@ -37,6 +37,7 @@ class LaravelAlexV2ApiConnector
 
         $this->client = new Client();
 
+        dd($this);
 //        $this->checkForProfiles(); // execute once
     }
 
