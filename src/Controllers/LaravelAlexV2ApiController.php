@@ -70,8 +70,6 @@ class LaravelAlexV2ApiController extends Controller
 
         $connector = new LaravelAlexV2ApiConnector();
 
-        dd($connector);
-
         // format profiles
         $profiles_arr = [];
         $now = Carbon::now()->format('Ymd');
