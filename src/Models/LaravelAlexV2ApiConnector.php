@@ -48,8 +48,6 @@ class LaravelAlexV2ApiConnector
         $headers = ['Content-Type' => 'application/json'];
         $content = ['av2_S_ct_identifiant' => $this->sp_entity_id, 'av2_S_ct_mdp' => $this->api_password];
 
-        dd($client, $endpoint, $headers, $content);
-
         $response = $client->post(
             $endpoint, [
                 'json' => $content,
@@ -59,6 +57,8 @@ class LaravelAlexV2ApiConnector
                 'ssl_key' => $this->ssl_key,
             ]
         );
+
+        dd($response);
         return json_decode($response->getBody()->getContents())->jeton;
 
 //        // Autre méthode : Curl (fonctionne).
