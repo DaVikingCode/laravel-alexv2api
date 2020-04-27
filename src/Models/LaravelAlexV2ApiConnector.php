@@ -36,8 +36,6 @@ class LaravelAlexV2ApiConnector
         $this->jeton = $this->ws_auth_cta();
 
         $this->client = new Client();
-
-//        $this->checkForProfiles(); // execute once
     }
 
     // 6.1	Authentification d’un compte technique applicatif au Webservice ALEXV2 (service : ws_auth_cta)
