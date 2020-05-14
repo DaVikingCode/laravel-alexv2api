@@ -10,7 +10,7 @@ class LaravelAlexV2ApiConnector
     public $sp_entity_id;
     public $cert;
     public $ssl_key;
-    public $jeton;
+    public $token;
     public $api_url;
     public $api_password;
     public $client;
@@ -33,7 +33,7 @@ class LaravelAlexV2ApiConnector
         $this->ssl_key = storage_path(config('laravelalexv2api.cert_path') . '/' . config('laravelalexv2api.server_key_file'));
         $this->api_password = config('laravelalexv2api.alex_v2_api_password');
 
-        $this->jeton = $this->ws_auth_cta();
+        $this->token = $this->ws_auth_cta();
 
         $this->client = new Client();
     }
@@ -56,26 +56,7 @@ class LaravelAlexV2ApiConnector
             ]
         );
 
-        return json_decode($response->getBody()->getContents())->jeton;
-
-//        // Autre méthode : Curl (fonctionne).
-//        $ch = curl_init();
-//        curl_setopt($ch, CURLOPT_URL, $this->api_url);
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-//        curl_setopt($ch, CURLOPT_POSTFIELDS, '{\"av2_S_ct_identifiant\": \"'.$this->sp_entity_id.'\",\"av2_S_ct_mdp\": \"'.$this->api_password.'\"}');
-//        curl_setopt($ch, CURLOPT_POST, 1);
-//        curl_setopt($ch, CURLOPT_SSLCERT, $this->cert);
-//        curl_setopt($ch, CURLOPT_SSLKEY, $this->ssl_key);
-//        $headers = array();
-//        $headers[] = 'Content-Type: application/json';
-//        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-//        $result = curl_exec($ch);
-//        if (curl_errno($ch)) {
-//            echo 'Error:' . curl_error($ch);
-//        }
-//        curl_close($ch);
-//        dd($result);
-//        return json_decode($result)->jeton;
+        return json_decode($response->getBody()->getContents())->token;
     }
 
 }

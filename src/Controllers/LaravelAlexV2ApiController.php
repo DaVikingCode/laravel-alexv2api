@@ -81,7 +81,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_user_association";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_mail' => $email,
             'av2_S_nom' => $nom,
             'av2_S_prenom' => $prenom,
@@ -107,7 +107,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_user_dissociation";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_cn' => $cn,
         ];
         $response = $connector->client->post(
@@ -133,7 +133,7 @@ class LaravelAlexV2ApiController extends Controller
         if($user->email != $email) // email changed
         {
             $content = [
-                'av2_S_jeton' => $connector->jeton,
+                'av2_S_token' => $connector->token,
                 'av2_S_cn' => $user->id_interne,
                 'av2_S_mail_new' => $email,
                 'av2_S_nom_new' => $nom,
@@ -143,7 +143,7 @@ class LaravelAlexV2ApiController extends Controller
         else // same email
         {
             $content = [
-                'av2_S_jeton' => $connector->jeton,
+                'av2_S_token' => $connector->token,
                 'av2_S_cn' => $user->id_interne,
                 'av2_S_nom_new' => $nom,
                 'av2_S_prenom_new' => $prenom,
@@ -169,7 +169,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_id_read";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_cn' => $cn,
         ];
         $response = $connector->client->post(
@@ -191,7 +191,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_id_search";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_mail' => $email,
             'av2_S_nom' => $nom,
             'av2_S_profil_portail' => $portail,
@@ -216,7 +216,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_profile_create";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_profil' => $profil,
         ];
         $response = $connector->client->post(
@@ -247,7 +247,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_profile_add";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_cn' => $cn,
             'av2_S_profil' => $profil,
             'av2_S_profil_deb' => $date_debut,
@@ -272,7 +272,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_profile_rem";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_cn' => $cn,
             'av2_S_profil' => $profil,
         ];
@@ -295,7 +295,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_profile_del";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_profil' => $profil,
         ];
         $response = $connector->client->post(
@@ -317,7 +317,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_id_profile_read";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_cn' => $cn,
         ];
         $response = $connector->client->post(
@@ -339,7 +339,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_profile_read";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
         ];
         $response = $connector->client->post(
             $endpoint, [
@@ -360,7 +360,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_profile_delegate";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_NNA2' => $nna,
         ];
         $response = $connector->client->post(
@@ -382,7 +382,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_profile_delegation_read";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
         ];
         $response = $connector->client->post(
             $endpoint, [
@@ -403,7 +403,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_profile_delegation_del";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_NNA2' => $nna,
         ];
         $response = $connector->client->post(
@@ -425,7 +425,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_custom_info_add";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_cn' => $cn,
             'av2_S_information' => $information,
         ];
@@ -448,7 +448,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_custom_info_del";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_cn' => $cn,
             'av2_S_information' => $information,
         ];
@@ -471,7 +471,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_custom_info_read";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_cn' => $cn,
         ];
         $response = $connector->client->post(
@@ -493,7 +493,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_custom_info_delegate";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_NNA2' => $nna,
         ];
         $response = $connector->client->post(
@@ -515,7 +515,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_custom_info_delegation_read";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
         ];
         $response = $connector->client->post(
             $endpoint, [
@@ -536,7 +536,7 @@ class LaravelAlexV2ApiController extends Controller
         $endpoint = $connector->api_url . "ws_custom_info_delegation_del";
         $headers = ['Content-Type' => 'application/json'];
         $content = [
-            'av2_S_jeton' => $connector->jeton,
+            'av2_S_token' => $connector->token,
             'av2_S_NNA2' => $nna,
         ];
         $response = $connector->client->post(
