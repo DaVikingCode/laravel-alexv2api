@@ -12,7 +12,8 @@
     "homepage": "https://github.com/davikingcode/alexv2api",
     "keywords": ["DaVikingCode", "Laravel", "AlexV2Api"],
     "require": {
-        "spatie/laravel-permission": "^3.0"
+        "spatie/laravel-permission": "^3.0",
+        "guzzlehttp/guzzle": "^7.2"
     },
     "require-dev": {
 
